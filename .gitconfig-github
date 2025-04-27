@@ -1,0 +1,8 @@
+[user]
+    name = artichoked1
+    email = 41409702+artichoked1@users.noreply.github.com
+    signingkey = ~/.ssh/id_ed25519_github_sign.pub
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true

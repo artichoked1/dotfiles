@@ -1,0 +1,24 @@
+[user]
+	name = artichoked1
+	email = 41409702+artichoked1@users.noreply.github.com
+	signingkey = ~/.ssh/id_ed25519_github_sign.pub
+[init]
+	defaultBranch = master
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[url "https://"]
+	insteadOf = git://
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+
+[includeIf "gitdir:~/Projects/github/"]
+    path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/Projects/git.artichoke.cc/"]
+    path = ~/.gitconfig-git.artichoke.cc
