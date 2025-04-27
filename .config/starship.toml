@@ -1,0 +1,58 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+${custom.fish_icon}${custom.bash_icon}${custom.zsh_icon}\
+$directory\
+$git_branch\
+${custom.dirty}\n\
+$character"""
+
+[python]
+disabled = true
+
+[custom.fish_icon]
+# Only show in Fish
+when    = 'test "$STARSHIP_SHELL" = "fish"'
+command = 'echo [🐟]'
+style   = 'bold green'
+
+[custom.bash_icon]
+# Only show in Fish
+when    = 'test "$STARSHIP_SHELL" = "bash"'
+command = 'echo [🐚]'
+style   = 'bold green'
+
+[custom.zsh_icon]
+# Only show in Fish
+when    = 'test "$STARSHIP_SHELL" = "zsh"'
+command = 'echo [ℤ]'
+style   = 'bold green'
+
+[directory]
+format = "[$path]($style) "
+style = "cyan"
+disabled = false
+read_only = " 󰌾"
+
+[git_branch]
+format = "on [$symbol$branch]($style) "
+style = "bold purple"
+disabled = false
+symbol = " "
+
+[custom.dirty]
+when = "is-git-dirty"
+command = "echo '*'"
+style   = 'bold red'
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
